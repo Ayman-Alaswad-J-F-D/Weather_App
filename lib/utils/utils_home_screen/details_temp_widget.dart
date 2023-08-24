@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../app/constants.dart';
-
+// ! Not User
 class DetailsTempWidget extends StatelessWidget {
   const DetailsTempWidget({
     Key? key,
@@ -24,8 +23,8 @@ class DetailsTempWidget extends StatelessWidget {
             fontSize: 20,
             color: color,
             shadows: const [
-              Shadow(color: kWhite, blurRadius: 1),
-              Shadow(color: kWhite, blurRadius: 2),
+              Shadow(color: Colors.black38, blurRadius: 1),
+              // Shadow(color: Colors.black, blurRadius: 2),
             ],
           ),
         ),
@@ -36,8 +35,8 @@ class DetailsTempWidget extends StatelessWidget {
             fontSize: 20,
             color: color,
             shadows: const [
-              Shadow(color: kWhite, blurRadius: 1),
-              Shadow(color: kWhite, blurRadius: 2),
+              Shadow(color: Colors.black38, blurRadius: 1),
+              // Shadow(color: Colors.black, blurRadius: 2),
             ],
           ),
         ),

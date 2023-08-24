@@ -4,10 +4,11 @@ import '../../app/constants.dart';
 import '../../model/weather_model.dart';
 import 'custom_text.dart';
 
+// ! Not Use
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     Key? key,
-    required this.provider,
+    this.provider,
   }) : super(key: key);
 
   final WeatherModel? provider;
@@ -41,7 +42,7 @@ class CustomAppBar extends StatelessWidget {
             child: IconButton(
               padding: EdgeInsets.zero,
               onPressed: () {
-                Navigator.pop(context);
+                // Navigator.pushNamed(context, SearchScreen.routeName);
               },
               icon: const Icon(
                 Icons.search,

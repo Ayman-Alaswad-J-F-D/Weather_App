@@ -1,9 +1,10 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_app/screens/search_screen.dart';
+import 'package:lottie/lottie.dart';
 
-import '../app/constants.dart';
-import '../utils/utils_home_screen/custom_text.dart';
+import '../../app/constants.dart';
+import '../../utils/utils_home_screen/custom_text.dart';
+import 'main_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -15,10 +16,8 @@ class SplashScreen extends StatelessWidget {
     return AnimatedSplashScreen(
       splashIconSize: double.infinity,
       splash: const BodySplashScreen(),
-      nextScreen: const SearchScreen(),
-      duration: 3000,
-      splashTransition: SplashTransition.fadeTransition,
-      backgroundColor: kPrimaryColor,
+      nextScreen: const MainScreen(),
+      backgroundColor: kPrimaryColor.withOpacity(.8),
     );
   }
 }
@@ -32,12 +31,19 @@ class BodySplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
-        Spacer(flex: 3),
-        CustomText(lable: "Current Weather", fontSize: 25),
-        Spacer(flex: 1),
-        Icon(Icons.sunny_snowing, color: kWhite, size: 100),
-        Spacer(flex: 5),
+      children: [
+        const Spacer(flex: 7),
+        const CustomText(
+          lable: "Current Weather",
+          colorText: kWhite,
+          fontSize: 25,
+        ),
+        const Spacer(),
+        LottieBuilder.asset(
+          Images.cloudyMain,
+          height: MediaQuery.of(context).size.height / 1.5,
+        ),
+        const Spacer(flex: 4),
       ],
     );
   }

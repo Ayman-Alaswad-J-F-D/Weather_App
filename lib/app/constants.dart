@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ImageAssest {
+class Images {
+  Images._();
+
   static const String backgroundSplashScreen =
       'assets/images/splash_background.jpg';
 
@@ -11,10 +13,14 @@ class ImageAssest {
       'assets/images/night_weather.jpg';
   static const String defualtStatusWeather =
       'assets/images/defualt_status_weather.png';
+
+  static const String cloudy = 'assets/anims/cloudy.json';
+  static const String cloudyMain = 'assets/anims/cloudy_main.json';
 }
 
-Color kPrimaryColor = Colors.blue[400]!;
+const Color kPrimaryColor = Colors.lightBlueAccent;
 const Color kWhite = Colors.white;
+const Color kGrey = Colors.grey;
 
 class Constants {
   static const String empty = "";
