@@ -1,7 +1,9 @@
 // ignore_for_file: avoid_print
 
+// import 'package:flutter/material.dart';
 import 'package:weather_app/model/error_model.dart';
 import 'package:weather_app/model/five_days_data.dart';
+import 'package:weather_app/services/mapper.dart';
 
 import '../api/api_repo.dart';
 import '../model/current_weather_data.dart';
@@ -23,7 +25,8 @@ class WeatherService {
 
     ApiRepo(url: url, paylod: null).getData(
       beforeSend: () => {if (beforeSend != null) beforeSend()},
-      onSaccess: (data) => {onSaccess!(CurrentWeatherData.fromJson(data))},
+      onSaccess: (data) =>
+          {onSaccess!(CurrentWeatherData.fromJson(data).toDomain())},
       onError: (error) => {
         if (onError != null)
           {
@@ -46,7 +49,9 @@ class WeatherService {
       beforeSend: () => {if (beforSend != null) beforSend()},
       onSaccess: (data) => {
         onSaccess!(
-          (data["list"] as List).map((t) => FiveDayData.fromJson(t)).toList(),
+          (data["list"] as List)
+              .map((t) => FiveDayData.fromJson(t).toDomain())
+              .toList(),
         ),
       },
       onError: (error) => {
