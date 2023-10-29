@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../app/constants.dart';
-import '../../model/weather_model.dart';
 import 'custom_text.dart';
 
 // ! Not Use
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
-    Key? key,
-    this.provider,
-  }) : super(key: key);
-
-  final WeatherModel? provider;
+  const CustomAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +15,15 @@ class CustomAppBar extends StatelessWidget {
         children: [
           Expanded(
             child: Row(
-              children: [
-                const Icon(
+              children: const [
+                Icon(
                   Icons.location_city_rounded,
                   color: kWhite,
                   size: 30,
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: 10),
                 CustomText(
-                  lable: provider?.country ?? 'Country Name',
+                  lable: 'Country Name',
                   fontSize: 18,
                   shadowTrue: true,
                 ),
